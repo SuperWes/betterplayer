@@ -59,7 +59,13 @@ class _BetterPlayerMaterialControlsState extends BetterPlayerControlsState<Bette
   Widget _buildMainWidget() {
     _wasLoading = isLoading(_latestValue);
     if (_latestValue?.hasError ?? false) {
-      return ColoredBox(color: Colors.black, child: _buildErrorWidget());
+      return ColoredBox(
+        color: Colors.black,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [Expanded(child: Center(child: _buildErrorWidget()))],
+        ),
+      );
     }
     return GestureDetector(
       onTap: () {
