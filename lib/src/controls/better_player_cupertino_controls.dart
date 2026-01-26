@@ -59,7 +59,13 @@ class _BetterPlayerCupertinoControlsState extends BetterPlayerControlsState<Bett
     _betterPlayerController = BetterPlayerController.of(context);
 
     if (_latestValue?.hasError ?? false) {
-      return ColoredBox(color: Colors.black, child: _buildErrorWidget());
+      return ColoredBox(
+        color: Colors.black,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [Expanded(child: Center(child: _buildErrorWidget()))],
+        ),
+      );
     }
 
     _betterPlayerController = BetterPlayerController.of(context);
