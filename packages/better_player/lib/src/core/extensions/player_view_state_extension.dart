@@ -260,7 +260,6 @@ extension PlayerViewStateExtension on BetterPlayerController {
         width: 0,
         height: 0,
       );
-      _postEvent(PlayerEvent(PlayerEventType.pipStart));
       // The activity is still being pinned here. An orientation request
       // landing inside that transition wedges the PiP window on Android 17,
       // so this full screen must not touch orientation (see BetterPlayer).
